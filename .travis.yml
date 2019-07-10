@@ -25,7 +25,7 @@ matrix:
       jdk: oraclejdk8
       before_install: nvm install 10
       script:
-        - cd src && npm run postclone gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=y includeAngularDemo=n
+        - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=y includeAngularDemo=n
         - npm run tsc
         - cd ../demo
         - npm install tns-core-modules@next -P --save-exact
@@ -45,7 +45,7 @@ matrix:
       node_js: "10"
       jdk: oraclejdk8
       script: 
-        - cd src && npm run postclone gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=y includeAngularDemo=n
+        - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=y includeAngularDemo=n
         - npm run tsc
         - cd ../demo
         - npm install tns-core-modules@next -P --save-exact
@@ -65,7 +65,7 @@ matrix:
       jdk: oraclejdk8
       before_install: nvm install 10
       script:
-        - cd src && npm run postclone gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=n includeAngularDemo=y
+        - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=n includeAngularDemo=y
         - npm run tsc
         - cd ../demo-angular
         - npm install tns-core-modules@next -P --save-exact
@@ -87,7 +87,7 @@ matrix:
       node_js: "10"
       jdk: oraclejdk8
       script:
-        - cd src && npm run postclone gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=n includeAngularDemo=y
+        - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=n includeAngularDemo=y
         - npm run tsc
         - cd ../demo-angular
         - npm install tns-core-modules@next -P --save-exact
