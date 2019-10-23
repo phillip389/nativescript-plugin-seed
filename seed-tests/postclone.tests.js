@@ -187,12 +187,17 @@ describe('postclone', function () {
         expect(fs.existsSync(constants.SEED_COPY_LOCATION + "/seed-tests")).toBeFalsy();
     });
 
-    it('should replace the seed README with the plugin one', function () {
+    it('should rename each yourplugin file with the new plugin name in README', function () {
         expect(fs.existsSync(constants.SEED_COPY_LOCATION + "/README.md")).toBeTruthy();
-        expect(fs.existsSync(constants.SEED_COPY_LOCATION + "/src/README.md")).toBeFalsy();
 
         var readmeContent = fs.readFileSync(constants.SEED_COPY_LOCATION + "/README.md");
-        expect(_srcReadmeContent).toEqual(readmeContent);
+        expect(readmeContent).toContain("nativescript-" + constants.TEST_PLUGIN_NAME);
+        expect(readmeContent).toContain("tns plugin add nativescript-" + constants.TEST_PLUGIN_NAME);
+    });
+
+    it('should remove old src/README and create a new /README', function() {
+        expect(fs.existsSync(constants.SEED_COPY_LOCATION + "/README.md")).toBeTruthy();
+        expect(fs.existsSync(constants.SEED_COPY_LOCATION + "/src/README.md")).toBeFalsy();
     });
 
     it('should rename each yourplugin file', function (done) {

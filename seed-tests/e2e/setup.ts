@@ -4,9 +4,9 @@ const addContext = require('mochawesome/addContext');
 const testReporterContext = <ITestReporter>{};
 testReporterContext.name = "mochawesome";
 /**
- * This folder should be the one provided in mocha.opts. 
+ * This folder should be the one provided in mocha.opts.
  * If omitted the default one is "mochawesome-report".
- * This is necessary because we need the logged images to be relatively 
+ * This is necessary because we need the logged images to be relatively
  * positioned according to mochawesome.html in the same folder
  */
 testReporterContext.reportDir = "mochawesome-report";

@@ -1,19 +1,18 @@
-import { AppiumDriver, createDriver, SearchOptions, Direction, nsCapabilities } from "nativescript-dev-appium";
-import { isSauceLab, runType } from "nativescript-dev-appium/lib/parser";
+import { AppiumDriver, createDriver, SearchOptions, nsCapabilities } from "nativescript-dev-appium";
+import { isSauceLab } from "nativescript-dev-appium/lib/parser";
 import { expect } from "chai";
 import "mocha";
-import { ok } from "assert";
+
 const fs = require('fs');
 const addContext = require('mochawesome/addContext');
 const rimraf = require('rimraf');
 const isSauceRun = isSauceLab;
 
-
 describe("sample scenario", () => {
     let driver: AppiumDriver;
 
-    before(async function(){
-        nsCapabilities.testReporter.context = this; 
+    before(async function() {
+        nsCapabilities.testReporter.context = this;
         driver = await createDriver();
         driver.defaultWaitTime = 20000;
         let dir = "mochawesome-report";
