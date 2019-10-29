@@ -18,7 +18,7 @@ matrix:
   include:
     - stage: "Build next"
       env:
-        - BuildAndroid="28"
+        - BuildAndroid="29"
         - NodeJs="8"
         - Type="TypeScript"
       language: android
@@ -32,7 +32,7 @@ matrix:
         - cd ../demo
         - tns build android
     - env: 
-        - BuildAndroid="28"
+        - BuildAndroid="29"
         - Type="TypeScript"
       language: android
       dist: trusty
@@ -55,11 +55,10 @@ matrix:
       env: 
         - BuildiOS="12.0"
         - Type="TypeScript"
-      osx_image: xcode10.2
+      osx_image: xcode11.2
       language: node_js 
       node_js: "10"
       jdk: oraclejdk8
-      before_script: pod repo update
       script: 
         - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=y includeAngularDemo=n
         - npm run tsc
@@ -75,7 +74,7 @@ matrix:
         - "curl -u $SAUCE_USER:$SAUCE_KEY -X POST -H 'Content-Type: application/octet-stream' $IOS_SAUCE_STORAGE/$IOS_PACKAGE_JS?overwrite=true --data-binary @$IOS_PACKAGE_FOLDER_JS/$IOS_PACKAGE_JS"
     - os: linux
       env: 
-        - BuildAndroid="28"
+        - BuildAndroid="29"
         - Type="Angular"
       language: android
       dist: trusty
@@ -99,11 +98,10 @@ matrix:
       env: 
         - BuildiOS="12.0"
         - Type="Angular"
-      osx_image: xcode10.2
+      osx_image: xcode11.2
       language: node_js 
       node_js: "10"
       jdk: oraclejdk8
-      before_script: pod repo update
       script: 
         - cd src && npm run postclone templatesBranch=master gitHubUsername=TheGitHubUser pluginName=ThePlugin initGit=y includeTypeScriptDemo=n includeAngularDemo=y
         - npm run tsc
@@ -141,7 +139,7 @@ matrix:
       language: node_js
       node_js: "10"
       jdk: oraclejdk8
-      osx_image: xcode10.2
+      osx_image: xcode11.2
       before_script:
         - cd seed-tests && npm i
       script: 
@@ -194,9 +192,9 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-28.0.3
+    - build-tools-29.0.2
     - android-21
-    - android-28
+    - android-29
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-21
 
