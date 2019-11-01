@@ -71,11 +71,11 @@ var class_name,
     preDefinedAppScripts = [
         {
             key: "appNamePlaceholder.ios",
-            value: "npm run tsc && cd appPathPlaceholder && tns run ios"
+            value: "npm i && cd appPathPlaceholder && tns run ios"
         },
         {
             key: "appNamePlaceholder.android",
-            value: "npm run tsc && cd appPathPlaceholder && tns run android"
+            value: "npm i && cd appPathPlaceholder && tns run android"
         }],
     preDefinedPrepareScript =
     {
