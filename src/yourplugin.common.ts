@@ -1,6 +1,5 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { Application, Dialogs, Observable } from '@nativescript/core';
+
 
 export class Common extends Observable {
   public message: string;
@@ -17,10 +16,10 @@ export class Common extends Observable {
 
 export class Utils {
   public static SUCCESS_MSG(): string {
-    let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}.`;
+    let msg = `Your plugin is working on ${Application.android ? 'Android' : 'iOS'}.`;
 
     setTimeout(() => {
-      dialogs.alert(`${msg} For real. It's really working :)`).then(() => console.log(`Dialog closed.`));
+      Dialogs.alert(`${msg} For real. It's really working :)`).then(() => console.log(`Dialog closed.`));
     }, 2000);
 
     return msg;
